@@ -2,20 +2,20 @@
 
 ## Contexte
 
-Une nouvelle interface permettant à l’utilisateur de consulter les commandes envoyées par ses collaborateurs doit être ajoutée à votre produit de gestion d’achats de matériel professionnel.
+Une nouvelle interface permettant à l’utilisateur de consulter les commandes envoyées par ses collaborateurs doit être ajoutée à au produit de gestion d’achats de matériel professionnel.
 
-Le product designer a livré la maquette et les développeurs front-end ont déjà préparé le terrain pour que vous puissiez intervenir à votre tour. Il ne vous reste donc plus qu’à intégrer le design prévu.
+Le product designer a livré la maquette et un développeur front-end a déjà préparé le terrain. Il ne reste plus qu’à intégrer le design prévu.
 
 ## Cahier des charges
 
-1. Vous devez respecter la maquette fournie.
-2. Le Product designer n'a fourni qu’une maquette desktop, il va falloir s'assurer que l’interface se comporte correctement sur tous les écrans du mobile aux écrans larges.
+1. Respecter la maquette fournie.
+2. S'assurer que l’interface se comporte correctement sur tous les écrans du mobile aux écrans larges.
 3. Le logo du produit doit toujours rester visible.
 4. La navigation doit rester facile d’accès sur mobile.
 5. L’interface doit être compatible sur les dernières versions de Chrome / Firefox / Safari / Edge.
 7. Les boutons “Télécharger” et “Ajouter une commande” n’ont pas besoin d’être fonctionnels.
 
-Les développeurs ont fourni un composant HTML dans le fichier `app.component.html` en essayant de se rapprocher de la maquette.
+Le développeur a fourni un composant HTML dans le fichier `app.component.html` en essayant de se rapprocher de la maquette.
 
 ## Sources
 
