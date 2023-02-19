@@ -1,0 +1,79 @@
+// UNITS
+$spacing: .5rem;
+
+// BREAKPOINTS
+$breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  desktop: 1024px,
+  xl: 1200px,
+);
+$break-on: map-get($breakpoints, desktop);
+
+// COLORS
+$brand-25: #F1F1FE;
+$brand-50: #E2E3FD;
+$brand-100: #D1D3FF;
+$brand-200: #C2C4FF;
+$brand-300: #A8ABFF;
+$brand-400: #9497FF;
+$brand-500: #7F7AFF;
+$brand-600: #6B5BFB;
+$brand-700: #5635E8;
+$brand-800: #4811D4;
+$brand-900: #230EAA;
+
+$grey-0: #FFFFFF;
+$grey-25: #F3F6FC;
+$grey-50: #EBF0FA;
+$grey-100: #E0E7F6;
+$grey-200: #D2DCEF;
+$grey-300: #BECBE4;
+$grey-400: #ACBBD7;
+$grey-500: #96A6C5;
+$grey-600: #667799;
+$grey-700: #445473;
+$grey-800: #2A3551;
+$grey-900: #131D35;
+
+$colors-variant: (
+  "danger": ("color": #F75F78, "lighten": #FBD5DC),
+  "success": ("color": #17CF63, "lighten": #CCFAD8),
+  "warning": ("color": #B9aC18, "lighten": #F9F5C8),
+);
+
+// FONTS
+$font-family: 'Source Sans Pro', sans-serif;
+$font-size-root: 16px;
+$font-weight-black: 900;
+$font-weight-bold: 700;
+$font-weight-semibold: 600;
+$font-weight-normal: 400;
+$fonts: (
+  "title1": ("font-size": 1.5rem, "line-height": 1.16666666, "font-weight": $font-weight-black, "color": $grey-900),
+  "title2": ("font-size": 1.25rem, "line-height": 1.2, "font-weight": $font-weight-bold),
+  "title3": ("font-size": 1rem, "line-height": 1.25, "font-weight": $font-weight-bold),
+  "title4": ("font-size": .875rem, "line-height": 1.4285714, "font-weight": $font-weight-semibold),
+  "title5": ("font-size": .75rem, "line-height": 1.3333333, "font-weight": $font-weight-semibold),
+  "body1": ("font-size": .875rem, "line-height": 1.4285714, "font-weight": $font-weight-normal),
+  "body2": ("font-size": .75rem, "line-height": 1.3333333, "font-weight": $font-weight-normal),
+);
+$font-size: map-get(map-get($fonts, 'body1'), 'font-size');
+$line-height: map-get(map-get($fonts, 'body1'), 'line-height');
+$font-weight: map-get(map-get($fonts, 'body1'), 'font-weight');
+
+// BODY
+$body-color: $grey-700;
+$body-bg: $grey-0;
+
+
+$transition-base: .2s ease-in-out;
+
+$input-color: $grey-600;
+$input-border-width: 1px;
+$input-padding-y: $spacing;
+$input-padding-right: $spacing;
+$input-padding-left: $spacing * 1.5;
+$input-height: calc(#{($input-padding-y * 2) + ($line-height * $font-size)} + #{$input-border-width * 2});
+
+$select-color: $grey-800;

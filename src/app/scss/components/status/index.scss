@@ -1,0 +1,18 @@
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: math.div($spacing, 2);
+  padding: math.div($spacing, 2) $spacing;
+  border-radius: $spacing;
+
+  &__icon {
+    font-size: 1em;
+  }
+
+  @each $variant, $params in $colors-variant {
+    &--#{$variant} {
+      color: map-get($params, 'color');
+      background-color: map-get($params, 'lighten');
+    }
+  }
+}

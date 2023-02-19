@@ -1,0 +1,22 @@
+.aside {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @media all and (min-width: $break-on) {
+    position: fixed;
+    height: 100vh;
+    width: $aside-width;
+
+    &__last-item {
+      margin-top: auto;
+    }
+  }
+
+  &__navigation {
+    @media all and (min-width: $break-on) {
+      height: 100%;
+    }
+  }
+}

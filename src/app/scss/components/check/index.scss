@@ -1,0 +1,42 @@
+.check {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $body-bg;color: currentColor;
+  width: $spacing * 2.5;
+  height: $spacing * 2.5;
+  border: 2px solid $grey-600;
+  border-radius: $spacing * .75;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color $transition-base;
+
+  &::before {
+    display: block;
+    height: 100%;
+    line-height: calc(#{$spacing * 2.5} - 2px);
+    text-align: center;
+    font-family: 'icons';
+    color: $grey-0;
+    background-color: transparent;
+    transition: background-color $transition-base;
+    content: "";
+  }
+
+  &:checked {
+    border-color: $brand-700;
+
+    &::before {
+      background-color: $brand-700;
+      content: "\e90b";
+    }
+  }
+
+  &:indeterminate::before {
+    border-color: $brand-700;
+
+    &::before {
+      background-color: $brand-700;
+      content: "\e90a";
+    }
+  }
+}

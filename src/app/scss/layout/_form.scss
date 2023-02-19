@@ -1,0 +1,79 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing * 2;
+  margin: ($spacing * 2.5) 0;
+
+  @media all and (min-width: map-get($breakpoints, 'tablet')) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media all and (min-width: map-get($breakpoints, 'desktop')) and (max-width: (map-get($breakpoints, 'xl') - 1)) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__filters {
+    @media all and (min-width: map-get($breakpoints, 'tablet')) {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @media all and (min-width: map-get($breakpoints, 'tablet')) and (max-width: (map-get($breakpoints, 'desktop') - 1)) {
+      flex: 0;
+      flex-wrap: nowrap;
+    }
+
+    @media all and (min-width: map-get($breakpoints, 'xl')) {
+      flex: 0;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__label {
+    margin-bottom: $spacing;
+    white-space: nowrap;
+
+    @media all and (max-width: (map-get($breakpoints, 'tablet') - 1)) {
+      width: 100%;
+    }
+
+    @media all and (min-width: map-get($breakpoints, 'tablet')) {
+      margin-right: $spacing;
+      margin-bottom: 0;
+    }
+  }
+
+  &__select {
+    @media all and (max-width: (map-get($breakpoints, 'tablet') - 1)) {
+      width: 100%;
+      margin-top: $spacing;
+    }
+
+    @media all and (min-width: map-get($breakpoints, 'tablet')) {
+      margin-left: $spacing;
+    }
+  }
+
+  &__search {
+    @media all and (min-width: map-get($breakpoints, 'tablet')) {
+      margin-left: auto;
+    }
+
+    @media all and (min-width: map-get($breakpoints, 'tablet')) and (max-width: (map-get($breakpoints, 'desktop') - 1)) {
+      flex: auto;
+      min-width: 10rem;
+      max-width: 23rem;
+    }
+    @media all and (min-width: map-get($breakpoints, 'desktop')) and (max-width: (map-get($breakpoints, 'xl') - 1)) {
+      width: 100%;
+      flex: none;
+    }
+    @media all and (min-width: map-get($breakpoints, 'xl')) {
+      flex: auto;
+      max-width: 23rem;
+    }
+  }
+}

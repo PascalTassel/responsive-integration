@@ -1,0 +1,39 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing;
+  padding: $spacing ($spacing * 2) $spacing;
+  border: 1px solid $grey-300;
+  border-radius: $spacing;
+  color: $grey-800;
+  text-decoration: none;
+  background-color: $body-bg;
+  cursor: pointer;
+  transition: border-color $transition-base, color $transition-base, background-color $transition-base;
+
+  @media all and (min-width: map-get($breakpoints, 'desktop')) {
+    padding: $spacing ($spacing * 3) $spacing ($spacing * 2);
+  }
+
+  &--primary {
+    color: $grey-0;
+    background-color: $brand-700;
+    border-color: $brand-700;
+
+    &:hover {
+      background-color: $brand-600;
+      border-color: $brand-600;
+    }
+  }
+
+  &--outline-primary {
+    color: $brand-700;
+    border-color: $brand-700;
+
+    &:hover {
+      color: $grey-0;
+      background-color: $brand-700;
+    }
+  }
+}

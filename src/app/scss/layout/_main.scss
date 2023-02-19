@@ -1,0 +1,7 @@
+.main {
+  padding: ($spacing * 2.5) ($spacing * 3);
+
+  @media all and (min-width: $break-on) {
+    margin-left: $aside-width;
+  }
+}

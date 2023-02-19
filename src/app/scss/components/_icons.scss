@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'icons';
+  src:  url('../../../assets/fonts/icons/icons.eot?mgvuy3');
+  src:  url('../../../assets/fonts/icons/icons.eot?mgvuy3#iefix') format('embedded-opentype'),
+    url('../../../assets/fonts/icons/icons.ttf?mgvuy3') format('truetype'),
+    url('../../../assets/fonts/icons/icons.woff?mgvuy3') format('woff'),
+    url('../../../assets/fonts/icons/icons.svg?mgvuy3#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-size: 1.25rem;
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &__add:before {
+    content: "\e906";
+  }
+  &__checklist:before {
+    content: "\e900";
+  }
+  &__computer:before {
+    content: "\e901";
+  }
+  &__group:before {
+    content: "\e902";
+  }
+  &__home:before {
+    content: "\e903";
+  }
+  &__mileage:before {
+    content: "\e904";
+  }
+  &__mixed:before {
+    content: "\e90a";
+  }
+  &__selected:before {
+    content: "\e90b";
+  }
+  &__settings:before {
+    content: "\e905";
+  }
+  &__success:before {
+    content: "\e907";
+  }
+  &__union:before {
+    content: "\e908";
+  }
+  &__warning:before {
+    content: "\e909";
+  }
+}

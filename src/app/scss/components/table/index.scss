@@ -1,0 +1,35 @@
+.table {
+  &--responsive {
+    width: 100%;
+    border: 1px solid $grey-100;
+    border-radius: $spacing;
+    overflow-x: auto;
+  }
+
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  &__heading {
+    padding: ($spacing * 1.25) ($spacing * 1.5);
+    color: $grey-400;
+    text-align: left;
+    line-height: 0;
+    background-color: $grey-25;
+  }
+
+  &__row {
+    background-color: $grey-0;
+    transition: background-color .2s ease-in-out;
+    border-top: 1px solid $grey-100;
+
+    &:hover {
+      background-color: $brand-25;
+    }
+  }
+
+  &__cell {
+    padding: $spacing ($spacing * 1.5);
+    white-space: nowrap;
+  }
+}

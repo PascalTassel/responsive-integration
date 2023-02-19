@@ -1,0 +1,157 @@
+<aside class="aside">
+  <div class="navigation aside__navigation" role="navigation" aria-label="Menu">
+    <div class="navigation__heading">
+      <div class="navigation__brand">
+        <img src="assets/logo.svg" class="navigation__logo" width="115" height="28" alt="Brand logo">
+      </div>
+      <button (click)="toggleNav($event)" class="navigation__toggle{{isNavOpened ? ' navigation__toggle--active' : ''}}" [attr.aria-pressed]="isNavOpened ? 'true' : 'false'" [attr.aria-expanded]="isNavOpened ? 'true' : 'false'" aria-controls="navigation-wrapper" aria-label="Toggle menu">
+        <span class="navigation__toggle-bar"></span>
+        <span class="navigation__toggle-bar"></span>
+        <span class="navigation__toggle-bar"></span>
+      </button>
+    </div>
+    <hr class="navigation__divider">
+    <nav class="navigation__wrapper{{!isNavOpened ? ' navigation__wrapper--closed' : ''}}" id="navigation-wrapper" [attr.aria-hidden]="!isNavOpened ? 'true' : 'false'" aria-label="Menu links">
+      <ul class="navigation__items" role="menubar">
+        <li role="none">
+          <a href="#" class="navigation__link" role="menuitem">
+            <i class="icon icon__home navigation__link-icon" role="img" aria-hidden="true"></i> Accueil
+          </a>
+        </li>
+        <li role="none">
+          <a href="#" class="navigation__link navigation__link--active" role="menuitem">
+            <i class="icon icon__checklist navigation__link-icon" role="img" aria-hidden="true"></i> Commandes
+          </a>
+        </li>
+        <li role="none">
+          <a href="#" class="navigation__link">
+            <i class="icon icon__computer navigation__link-icon" role="img" aria-hidden="true"></i> Produits
+          </a>
+        </li>
+        <li role="none">
+          <a href="#" class="navigation__link" role="menuitem">
+            <i class="icon icon__group navigation__link-icon" role="img" aria-hidden="true"></i> Clients
+          </a>
+        </li>
+        <li role="none">
+          <a href="#" class="navigation__link" role="menuitem">
+            <i class="icon icon__mileage navigation__link-icon" role="img" aria-hidden="true"></i> Rapports
+          </a>
+        </li>
+        <li class="navigation__item aside__last-item" role="none">
+          <a href="#" class="navigation__link" role="menuitem">
+            <i class="icon icon__settings navigation__link-icon" role="img" aria-hidden="true"></i> Paramètres
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
+
+<main class="main">
+
+  <header class="header">
+    <div class="header__titles">
+      <h1 class="title1 header__title">Commandes</h1>
+      <p class="header__subtitle">Retrouvez ici toutes les commandes passées et en cours.</p>
+    </div>
+    <div class="header__actions">
+      <a href="#" class="button title4 button--outline-primary" role="button">
+        <i class="icon icon__union" role="img" aria-hidden="true"></i> Télécharger
+      </a>
+      <a href="#" class="button title4 button--primary" role="button">
+        <i class="icon icon__add" role="img" aria-hidden="true"></i> Ajouter une commande
+      </a>
+    </div>
+  </header>
+
+  <section>
+    <form [formGroup]="filtersForm" class="form">
+      <div class="form__filters">
+        <div id="form-label" class="form__label">Filtrer par:</div>
+        <fieldset class="filters" role="radiogroup" aria-labelledby="form-label">
+          <label for="all" class="radio filters__filter">
+            <input type="radio" name="status" value="" id="all" formControlName="status" class="radio__input" aria-label="Toutes">
+            <span class="radio__label">Toutes</span>
+          </label>
+          <label for="paid" class="radio filters__filter">
+            <input type="radio" name="status" value="paid" id="paid" formControlName="status" class="radio__input" aria-label="Payée">
+            <span class="radio__label">Payée</span>
+          </label>
+          <label for="pending" class="radio filters__filter">
+            <input type="radio" name="status" value="pending" id="pending" formControlName="status" class="radio__input" aria-label="En attente">
+            <span class="radio__label">En attente</span>
+          </label>
+          <label for="failed" class="radio filters__filter">
+            <input type="radio" name="status" value="failed" id="failed" formControlName="status" class="radio__input" aria-label="Echouée">
+            <span class="radio__label">Echouée</span>
+          </label>
+        </fieldset>
+        <select id="buyer" formControlName="buyer" class="select form__select">
+          <option value="">Acheteur</option>
+          <option value="Hernandez Daniel">Hernandez Daniel</option>
+          <option value="Bragoulet Marie">Bragoulet Marie</option>
+          <option value="Archer Marie-Françoise">Archer Marie-Françoise</option>
+        </select>
+      </div>
+      <input type="text" placeholder="Rechercher un numéro de commande" id="search" formControlName="search" class="search form__search">
+    </form>
+
+    <div class="table--responsive">
+      <table class="table orders" aria-label="Orders list">
+        <thead class="table_head">
+          <tr>
+            <th class="table__heading title5 orders__heading--checkbox">
+              <input type="checkbox" (change)="toggleAll($event)" class="check" aria-label="Tout sélectionner" aria-checked="false">
+            </th>
+            <th class="table__heading title5 orders__heading--number">Numéro de commande</th>
+            <th class="table__heading title5 orders__heading--date">Date de commande</th>
+            <th class="table__heading title5 orders__heading--buyer">Acheteur</th>
+            <th class="table__heading title5 orders__heading--status">Statut</th>
+            <th class="table__heading title5 orders__heading--price">Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table__row" *ngFor="let order of orders | filters: ordersFilters">
+            <td class="table__cell">
+              <input type="checkbox" [checked]="isSelectAll" class="check" aria-label="Sélectionner" aria-checked="false">
+            </td>
+            <td class="table__cell">
+              {{ order.orderNumber }}
+            </td>
+            <td class="table__cell">
+              {{ order.orderDate }}
+            </td>
+            <td class="table__cell">
+              <div class="orders__buyer">
+                <div class="avatar orders__buyer-avatar">
+                  <img [src]="'assets/' + order.orderBuyerPicture" width="32" height="32" class="avatar__picture" alt="{{ order.orderBuyer }}">
+                </div>
+                <ul class="orders__buyer-details">
+                  <li class="orders__buyer-name">{{ order.orderBuyer }}</li>
+                  <li class="orders__buyer-contact body2">{{ order.orderBuyerContact }}</li>
+                </ul>
+              </div>
+            </td>
+            <td class="table__cell" [ngSwitch]="order.orderStatus">
+              <span *ngSwitchCase="'paid'" class="status status--success body2">
+                <i class="icon icon__success status__icon" role="img" aria-label="Accueil"></i> Payée
+              </span>
+              <span *ngSwitchCase="'pending'" class="status status--warning body2">
+                <i class="icon icon__warning status__icon" role="img" aria-label="Accueil"></i> En attente de paiement
+              </span>
+              <span *ngSwitchCase="'failed'" class="status status--danger body2">
+                <i class="icon icon__warning status__icon" role="img" aria-label="Accueil"></i> Echouée
+              </span>
+            </td>
+            <td class="table__cell">
+              {{ order.orderPrice }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- add empty state if no search results -->
+  </section>
+</main>

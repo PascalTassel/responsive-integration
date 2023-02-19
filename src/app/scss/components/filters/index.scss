@@ -1,0 +1,19 @@
+.filters {
+  display: inline-flex;
+
+  &__filter {
+    &:first-child {
+      border-top-left-radius: $spacing;
+      border-bottom-left-radius: $spacing;
+    }
+
+    &:last-child {
+      border-top-right-radius: $spacing;
+      border-bottom-right-radius: $spacing;
+    }
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+  }
+}

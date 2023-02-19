@@ -1,0 +1,51 @@
+.orders {
+  min-width: 1000px;
+
+  &__heading {
+    &--checkbox {
+      width: 5%;
+    }
+    &--number {
+      width: 15%;
+    }
+    &--date {
+      width: 15%;
+    }
+    &--buyer {
+      width: 30%;
+    }
+    &--status {
+      width: 20%;
+    }
+    &--price {
+      width: 15%;
+    }
+  }
+
+  &__buyer {
+    display: flex;
+    align-items: center;
+
+    &-details {
+      list-style: none;
+      margin-left: $spacing;
+      flex-grow: 1;
+      overflow: hidden;
+    }
+
+    &-avatar {
+      flex: 0 0 auto;
+    }
+
+    &-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-contact {
+      color: $grey-600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
