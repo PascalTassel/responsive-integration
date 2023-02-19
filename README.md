@@ -9,20 +9,24 @@ Le product designer a livré la maquette et les développeurs front-end ont déj
 ## Cahier des charges
 
 1. Vous devez respecter la maquette fournie.
-2. Le Product designer ne vous a fourni qu’une maquette desktop, il va falloir vous assurer que l’interface se comporte correctement sur tous les écrans du mobile aux écrans larges.
+2. Le Product designer n'a fourni qu’une maquette desktop, il va falloir s'assurer que l’interface se comporte correctement sur tous les écrans du mobile aux écrans larges.
 3. Le logo du produit doit toujours rester visible.
 4. La navigation doit rester facile d’accès sur mobile.
 5. L’interface doit être compatible sur les dernières versions de Chrome / Firefox / Safari / Edge.
-6. Le formulaire permettant de filtrer la liste de commandes est fonctionnel et doit le rester.
 7. Les boutons “Télécharger” et “Ajouter une commande” n’ont pas besoin d’être fonctionnels.
 
-Les développeurs vous ont fourni un composant HTML dans le fichier `app.component.html` en essayant de se rapprocher de la maquette. Vos propositions d’améliorations seront néanmoins les bienvenus tant sur les plans UI et UX que des choix d’implémentation ! N’hésitez pas à commenter votre code ou à ajouter un fichier d’explications.
+Les développeurs ont fourni un composant HTML dans le fichier `app.component.html` en essayant de se rapprocher de la maquette.
 
 ## Sources
 
-Vous trouverez la maquette et tous les assets nécessaires au projet dans la partie assets du [projet Figma](https://www.figma.com/file/ECWWfZYw2B5X8mLvkQrFdT/interface?node-id=2%3A2&t=6OLbh8YGkPYjGjv9-1).
+La maquette et tous les assets nécessaires au projet se trouvent dans la partie assets du [projet Figma](https://www.figma.com/file/ECWWfZYw2B5X8mLvkQrFdT/interface?node-id=2%3A2&t=6OLbh8YGkPYjGjv9-1).
 
 ![maquette](test-fed.png "Maquette")
+
+## Livrable
+
+- [Maquette intégrée](https://pascaltassel.github.io/responsive-integration/).
+- [Méthodologie](methodology.md).
 
 ## Environnement
 
